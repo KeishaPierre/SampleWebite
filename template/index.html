@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .body{
+        background-color: brown;
+        text-align: center;
+        font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+    }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To My Sample Website!!</title>
+</head>
+<body class='body'>
+    <h1>Welcome To My Sample Website!!</h1>
+    <div>
+    {% for item in product %}
+   <div style="display: flex;flex-direction: column">
+    <div>
+     <img src="/{{item.product_image}}"/> 
+   </div>
+       <p>{{item.name}}<br>{{item.description}}</p>
+    </div>
+       {% endfor %}
+    </div>
+    <!-- This is a form to submit pics,use with attribute 'product_image on Product model' -->
+    <!-- <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit">
+    </form> -->
+</body>
+</html> 
