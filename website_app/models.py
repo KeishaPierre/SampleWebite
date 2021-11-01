@@ -19,7 +19,7 @@ class Category(models.Model):
     CAR = 'CR'
     ELECTRONICS = 'EL'
     HOBBIES = 'HB'
-    CATEGORYCHOICES = [
+    CATEGORY_CHOICES = [
         (HOME, 'Home'),
         (PETS, 'Pets'),
         (CAR, 'Car'),
@@ -28,22 +28,23 @@ class Category(models.Model):
     ]
     category_choice = models.CharField(
         max_length=2,
-        choices=CATEGORYCHOICES,
+        choices=CATEGORY_CHOICES,
         default=HOBBIES,
     )
-    # def __str__(self):
-    #     return self.
-    def is_category_choice(self):
-        return self.username
+    def __str__(self):
+        choices= "CATEGORY_CHOICES"
+        for key,value in self.CATEGORY_CHOICES:
+            return self.category_choice
+     
 
-    # def user_directory_path(instance, images):
 class Products(models.Model):
     name = models.CharField(max_length=250, blank=False, null=False, default='none')
     tagline = models.CharField(max_length=250, null=True, blank=True)
-    price = models.IntegerField(null=True, blank=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True)
+    price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE, blank=True)
     description = models.CharField(max_length=250, null=True, blank=False)
-    product_image = models.ImageField(null=True, blank=True, upload_to='images/')
+    product_image = models.ImageField(null=True, blank=True, upload_to='media/images/', default='media/images/tennisball.jpg')
     
     def __str__(self):
         return self.name
+    

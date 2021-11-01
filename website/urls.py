@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index_view, name= "home"),
     path('product_detail_view/<int:id>/',views.product_detail_view, name='product detail'),
+    path('add_products_view/',views.add_products_view,name="add products"),
    
 ]
 

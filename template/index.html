@@ -2,10 +2,15 @@
 <html lang="en">
 <style>
     .body{
-        background-color: brown;
+        background-color: rgb(110, 107, 107);
         text-align: center;
         font-family: Helvetica, "Trebuchet MS", Verdana, sans-serif;
+        display: inline;
+
     }
+    
+    
+
 </style>
 <head>
     <meta charset="UTF-8">
@@ -15,16 +20,20 @@
 </head>
 <body class='body'>
     <h1>Welcome To My Sample Website!!</h1>
+    <div style="display: flex;flex-direction: column">
     <div>
+
     {% for item in product %}
-   <div style="display: flex;flex-direction: column">
-    <div>
-     <img src="/{{item.product_image}}"/> 
-   </div>
-       <p>{{item.name}}<br>{{item.description}}</p>
+    <div class="col-3">
+        <a href="/product_detail_view/{{item.id}}/">
+            <img width=200px src="/media/{{item.product_image}}/" alt="picture of product">
+        </a>
+        <p>{{item.name}}<br>{{item.description}}<br>Price(USD): ${{item.price}}</p>
+        
+        </div>
+        {% endfor %}
     </div>
-       {% endfor %}
-    </div>
+</div>
     <!-- This is a form to submit pics,use with attribute 'product_image on Product model' -->
     <!-- <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
