@@ -52,3 +52,8 @@ def add_products_view(request):
 def product_detail_view(request,id):
     product = Products.objects.get(id=id)
     return render (request, 'product_detail_view.html',{'product': product})
+
+
+def product_page(request):
+    product = Products.objects.all()
+    return render (request, 'product_page.html',{'product': product})

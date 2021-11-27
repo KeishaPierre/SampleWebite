@@ -24,6 +24,8 @@ urlpatterns = [
     path('',views.index_view, name= "home"),
     path('product_detail_view/<int:id>/',views.product_detail_view, name='product detail'),
     path('add_products_view/',views.add_products_view,name="add products"),
+    path('product_page/',views.product_page, name='all products'),
+    path('product_page/home',views.index_view, name='home'),
     
    
 ]
