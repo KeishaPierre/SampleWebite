@@ -43,7 +43,7 @@ class Products(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     category = models.ForeignKey("Category", on_delete=models.CASCADE, blank=True)
     description = models.CharField(max_length=250, null=True, blank=False)
-    product_image = models.ImageField(null=True, blank=True, upload_to='media/images/', default='media/images/tennisball.jpg')
+    product_image = models.ImageField(null=True, blank=True, upload_to='media/media/images/', default='media/images/tennisball.jpg')
     
     def __str__(self):
         return self.name
