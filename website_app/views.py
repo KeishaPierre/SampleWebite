@@ -57,3 +57,5 @@ def product_detail_view(request,id):
 def product_page(request):
     product = Products.objects.all()
     return render (request, 'product_page.html',{'product': product})
+def delete():
+    pass

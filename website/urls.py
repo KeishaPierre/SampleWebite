@@ -26,6 +26,7 @@ urlpatterns = [
     path('add_products_view/',views.add_products_view,name="add products"),
     path('product_page/',views.product_page, name='all products'),
     path('product_page/home',views.index_view, name='home'),
+    path('product_detail_view/<int:id>/delete',views.delete,name='delete item'),
     
    
 ]
