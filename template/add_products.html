@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 
 <html lang="en">
+<style>
+    .body {
+  background-color: lightblue;
+}
 
+</style>
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSS only -->
+    
 </head>    
-body {
-    background-color: lightblue;
-  }
-
-
-<form method="post">
+<body class='body'>
+  
+  
+  <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="Submit!">
-</form>
+  </form>
+  
+</body>
