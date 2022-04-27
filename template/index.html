@@ -9,7 +9,11 @@
 
     }
     
-    
+
+
+
+
+  
 
 </style>
 <head>
@@ -26,15 +30,21 @@
     <br>
     <br>
     <h1>My Sample Website!!</h1>
+
+
+ 
+
+
     <div style="display: flex;flex-direction: column">
     <div>
 
     {% for item in product %}
     <div class="col-3">
-        <a href="/product_detail_view/{{item.id}}/">
+        <a href="/product_detail_view/{{item.id}}/"><br>
         <img width=200px src="/media/{{item.product_image}}/" alt="picture of product">
         </a>
-        <p>{{item.name}}<br>{{item.description}}<br>Price(USD): ${{item.price}}</p>
+        <p>{{item.name}}<br>{{item.description}}<br>Price(USD): ${{item.price}}<br>{{item.buybutton}}</p>
+        <button type="button" onclick="alert('Item recently purchased, purchase again?')">Buy Now!</button>
         
         </div>
         {% endfor %}
