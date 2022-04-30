@@ -31,8 +31,8 @@ body {
     <p>
         {% for image in productdetail %}
         <div class="col-3">
-            <a href="/product_detail_view/{{item.id}}/">
-                <img width=200px src="/media/media/{{item.product_image}}/" alt="picture of product">
+            <!-- <a href="/product_detail_view/{{item.id}}/"> -->
+                <!-- <img width=200px src="/media/media/{{item.product_image}}/" alt="picture of product"> -->
         <a>
                 <!-- <img width="200px" src="/media/images/tennisball_r1LsdQd.jpg/" alt="picture of product"></a> -->
 
@@ -51,11 +51,13 @@ body {
     
     </p>
     
+ <img width=200px src="/media/{{product.product_image}}/" alt="picture of product">
+    </a>
 <p>Title: {{product.name}}</p>
 <p>Tagline: {{product.tagline}}</p>
 <p>Category: {{product.category}}</p>
 <p>Description: {{product.description}}</p>
-<p>Price: {{product.price}}</p>
+<!-- <p>Price: {{product.price}}</p> -->
 
 </div>
 </body>
